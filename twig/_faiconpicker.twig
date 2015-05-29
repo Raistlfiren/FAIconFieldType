@@ -1,0 +1,26 @@
+{#=== Options ============================================================================#}
+
+{% set attr_opt = {
+class:        field.class|default(''),
+name_id:      key,
+required:     field.required|default(false),
+readonly:     field.readonly|default(false)
+}%}
+
+{#=== FIELDSET ============================================================================#}
+
+<fieldset class="faiconpicker">
+    <div class="col-sm-12">
+        <div>
+            <label class="control-label">{{field.label|default(key)}}</label>
+        </div>
+        <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(key)|default('fa-anchor') }}" type="text" />
+
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                $('#{{ key }}').iconpicker();
+            })
+        </script>
+    </div>
+</fieldset>
