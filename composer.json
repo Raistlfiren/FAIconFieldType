@@ -1,10 +1,16 @@
 {
-    "name": "Raistlfiren/FAIconFieldType",
+    "name": "raistlfiren/faiconfieldtype",
     "description": "A new field type to allow users to select font awesome icons. The field is based off the icon picker - http://mjolnic.com/fontawesome-iconpicker/",
     "type": "bolt-extension",
     "require": {
         "bolt/bolt": ">=2.0.0,<3.0.0"
     },
+    "keywords": [
+      "field",
+      "fontawesome",
+      "backend",
+      "iconpicker"
+    ],
     "license": "MIT",
     "authors": [
         {
