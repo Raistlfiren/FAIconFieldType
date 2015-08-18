@@ -1,10 +1,12 @@
 {#=== Options ============================================================================#}
 
 {% set attr_opt = {
-class:        field.class|default(''),
-name_id:      key,
-required:     field.required|default(false),
-readonly:     field.readonly|default(false)
+class:              field.class|default(''),
+name_id:            key,
+required:           field.required|default(false),
+readonly:           field.readonly|default(false),
+type:               field.hidden ? 'hidden' : 'text',
+'data-placement':   field.placement|default(false)
 }%}
 
 {#=== FIELDSET ============================================================================#}
@@ -14,7 +16,7 @@ readonly:     field.readonly|default(false)
         <div>
             <label class="control-label">{{field.label|default(key)}}</label>
         </div>
-        <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(key)|default('fa-anchor') }}" type="text" />
+        <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(key)|default('fa-anchor') }}" />
 
         <script type="text/javascript">
 
