@@ -26,8 +26,10 @@ class Extension extends BaseExtension
     }
 
     public function initialize() {
-        $this->addCSS('assets/css/fontawesome-iconpicker.min.css');
-        $this->addJavascript('assets/js/fontawesome-iconpicker.min.js', true);
+        if ($this->app['config']->getWhichEnd() == 'backend') {
+            $this->addCSS('assets/css/fontawesome-iconpicker.min.css');
+            $this->addJavascript('assets/js/fontawesome-iconpicker.min.js', true);
+        }
     }
 
     public function getName()
