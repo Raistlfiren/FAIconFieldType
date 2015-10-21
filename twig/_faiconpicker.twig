@@ -2,7 +2,8 @@
 
 {% set attr_opt = {
 class:              field.class|default(''),
-name_id:            key,
+id:                 key,
+name:               name,
 required:           field.required|default(false),
 readonly:           field.readonly|default(false),
 type:               field.hidden ? 'hidden' : 'text',
@@ -14,9 +15,9 @@ type:               field.hidden ? 'hidden' : 'text',
 <fieldset class="faiconpicker">
     <div class="col-sm-12">
         <div>
-            <label class="control-label">{{field.label|default(key)}}</label>
+            <label class="control-label">{{field.label|default(labelkey)}}</label>
         </div>
-        <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(key)|default('fa-anchor') }}" />
+        <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(contentkey)|default('fa-anchor') }}" />
 
         <script type="text/javascript">
 
