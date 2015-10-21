@@ -2,27 +2,45 @@
 
 {% set attr_opt = {
 class:              field.class|default(''),
-name_id:            key,
+id:                 key,
+name:               name,
 required:           field.required|default(false),
 readonly:           field.readonly|default(false),
 type:               field.hidden ? 'hidden' : 'text',
 'data-placement':   field.placement|default(false)
 }%}
 
+{% set configs = field.configs|default({}) %}
+{% set component = field.component|default(false) %}
+{% set icon_class = field.icon_class|default('fa') %}
+
 {#=== FIELDSET ============================================================================#}
 
 <fieldset class="faiconpicker">
     <div class="col-sm-12">
         <div>
-            <label class="control-label">{{field.label|default(key)}}</label>
+            <label class="control-label">{{field.label|default(labelkey)}}</label>
         </div>
-        <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(key)|default('fa-anchor') }}" />
+        {% if component != false %}
+        <div class="input-group">
+            <span class="input-group-addon"></span>
+        {% endif %}
+            <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(contentkey)|default(field.default) }}" />
+        {% if component != false %}
+        </div>
+        {% endif %}
+
 
         <script type="text/javascript">
-
             $(document).ready(function() {
-                $('#{{ key }}').iconpicker();
-            })
+                var $configs = $.extend({}, {{ configs|json_encode|raw }}, {
+                    fullClassFormatter: function(val) {
+                        return '{{ icon_class }} ' + val;
+                    }
+                });
+
+                $('#{{ key }}').iconpicker($configs);
+            });
         </script>
     </div>
 </fieldset>
