@@ -3,7 +3,7 @@
     "description": "A new field type to allow users to select font awesome icons. The field is based off the icon picker - http://mjolnic.com/fontawesome-iconpicker/",
     "type": "bolt-extension",
     "require": {
-        "bolt/bolt": ">=2.0.0,<3.0.0"
+        "bolt/bolt": "^3.0.0"
     },
     "keywords": [
       "field",
@@ -19,15 +19,11 @@
         }
     ],
     "autoload": {
-        "files": [
-            "init.php"
-        ],
         "psr-4": {
-            "Bolt\\Extension\\Raistlfiren\\FAIconFieldType\\": ""
+            "Bolt\\Extension\\Raistlfiren\\FAIconFieldType\\": "src"
         }
     },
-    
     "extra": {
-        "bolt-assets": "assets"
+        "bolt-assets": "web"
     }
 }

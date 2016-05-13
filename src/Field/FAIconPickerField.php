@@ -1,6 +1,6 @@
 <?php
 
-namespace Bolt\Extension\Raistlfiren\FAIconFieldType;
+namespace Bolt\Extension\Raistlfiren\FAIconFieldType\Field;
 
 use Bolt\Field\FieldInterface;
 
