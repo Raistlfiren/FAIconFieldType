@@ -20,10 +20,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "Bolt\\Extension\\Raistlfiren\\FAIconFieldType\\": "src"
+            "Raistlfiren\\FAIconFieldType\\": "src"
         }
     },
     "extra": {
-        "bolt-assets": "web"
+        "bolt-assets": "web",
+        "bolt-class": "Raistlfiren\\FAIconFieldType\\FAIconFieldTypeExtension"
     }
 }

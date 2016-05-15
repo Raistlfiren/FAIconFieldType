@@ -1,6 +1,6 @@
 <?php
 
-namespace Bolt\Extension\Raistlfiren\FAIconFieldType;
+namespace Raistlfiren\FAIconFieldType;
 
 use Bolt\Extension\Raistlfiren\FAIconFieldType\Field\FAIconPickerField;
 use Bolt\Extension\SimpleExtension;
