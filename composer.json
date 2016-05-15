@@ -18,6 +18,8 @@
             "email": "avaland@woopta.com"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Raistlfiren\\FAIconFieldType\\": "src"
@@ -25,6 +27,9 @@
     },
     "extra": {
         "bolt-assets": "web",
-        "bolt-class": "Raistlfiren\\FAIconFieldType\\FAIconFieldTypeExtension"
+        "bolt-class": "Raistlfiren\\FAIconFieldType\\FAIconFieldTypeExtension",
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
     }
 }
