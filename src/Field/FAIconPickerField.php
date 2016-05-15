@@ -2,9 +2,10 @@
 
 namespace Raistlfiren\FAIconFieldType\Field;
 
-use Bolt\Field\FieldInterface;
+use Bolt\Storage\Field\FieldInterface;
 
-class FAIconPickerField implements FieldInterface {
+class FAIconPickerField implements FieldInterface
+{
 
     public function getName()
     {
@@ -23,7 +24,6 @@ class FAIconPickerField implements FieldInterface {
 
     public function getStorageOptions()
     {
-        return array('default'=>'');
+        return ['default'=>''];
     }
-
 }

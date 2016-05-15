@@ -1,7 +1,7 @@
 {#=== Options ============================================================================#}
 
 {% set attr_opt = {
-class:              field.class|default(''),
+class:              field.class|default('form-control large'),
 id:                 key,
 name:               name,
 required:           field.required|default(false),
@@ -16,17 +16,16 @@ type:               field.hidden ? 'hidden' : 'text',
 
 {#=== FIELDSET ============================================================================#}
 
-<fieldset class="faiconpicker">
-    <div class="col-sm-12">
-        <div>
-            <label class="control-label">{{field.label|default(labelkey)}}</label>
-        </div>
+<fieldset class="faiconpicker form-group bolt-field-text">
+    <legend class="sr-only">{{field.label|default(labelkey)}}</legend>
+    <label class="main control-label col-xs-6 control-label">{{field.label|default(labelkey)}}: </label>
+    <div class="col-xs-6">
         {% if component != false %}
         <div class="input-group">
             <span class="input-group-addon"></span>
-        {% endif %}
+            {% endif %}
             <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(contentkey)|default(field.default) }}" />
-        {% if component != false %}
+            {% if component != false %}
         </div>
         {% endif %}
 
