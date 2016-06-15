@@ -30,10 +30,13 @@ class FAIconFieldTypeExtension extends SimpleExtension
             ->setZone(Zone::BACKEND);
         $js = (new JavaScript('js/fontawesome-iconpicker.min.js'))
             ->setZone(Zone::BACKEND);
+        $start = (new JavaScript('js/start.js'))
+            ->setZone(Zone::BACKEND);
 
         return [
             $style,
-            $js
+            $js,
+            $start
         ];
     }
 }

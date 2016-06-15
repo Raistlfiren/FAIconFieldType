@@ -1,18 +1,18 @@
 {#=== Options ============================================================================#}
 
 {% set attr_opt = {
-class:              field.class|default('form-control large'),
+class:              field.class|default('form-control large faicon'),
 id:                 key,
 name:               name,
 required:           field.required|default(false),
 readonly:           field.readonly|default(false),
 type:               field.hidden ? 'hidden' : 'text',
-'data-placement':   field.placement|default(false)
+'data-placement':   field.placement|default(false),
+'data-config': field.configs|default({})|json_encode|raw,
+'data-icon-class':     field.icon_class|default('fa') ~ ' ' ~ val
 }%}
 
-{% set configs = field.configs|default({}) %}
 {% set component = field.component|default(false) %}
-{% set icon_class = field.icon_class|default('fa') %}
 
 {#=== FIELDSET ============================================================================#}
 
@@ -28,18 +28,5 @@ type:               field.hidden ? 'hidden' : 'text',
             {% if component != false %}
         </div>
         {% endif %}
-
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                var $configs = $.extend({}, {{ configs|json_encode|raw }}, {
-                    fullClassFormatter: function(val) {
-                        return '{{ icon_class }} ' + val;
-                    }
-                });
-
-                $('#{{ key }}').iconpicker($configs);
-            });
-        </script>
     </div>
 </fieldset>
