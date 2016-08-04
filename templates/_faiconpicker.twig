@@ -8,8 +8,8 @@ required:           field.required|default(false),
 readonly:           field.readonly|default(false),
 type:               field.hidden ? 'hidden' : 'text',
 'data-placement':   field.placement|default(false),
-'data-config': field.configs|default({})|json_encode|raw,
-'data-icon-class':     field.icon_class|default('fa') ~ ' ' ~ val
+'data-config':      field.configs|default({})|json_encode|raw,
+'data-icon-class':  field.icon_class|default('fa')
 }%}
 
 {% set component = field.component|default(false) %}
