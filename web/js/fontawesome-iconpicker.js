@@ -551,10 +551,10 @@
         },
         _bindElementEvents: function() {
             var c = this;
-            this.getSearchInput().on("keyup.iconpicker", function() {
+            this.getSearchInput().on("keyup", function() {
                 c.filter(a(this).val().toLowerCase());
             });
-            this.getAcceptButton().on("click.iconpicker", function() {
+            this.getAcceptButton().on("click", function() {
                 var a = c.iconpicker.find(".iconpicker-selected").get(0);
                 c.update(c.iconpickerValue);
                 c._trigger("iconpickerSelected", {
@@ -565,22 +565,22 @@
                     c.hide();
                 }
             });
-            this.getCancelButton().on("click.iconpicker", function() {
+            this.getCancelButton().on("click", function() {
                 if (!c.isInline()) {
                     c.hide();
                 }
             });
-            this.element.on("focus.iconpicker", function(a) {
+            this.element.on("focus", function(a) {
                 c.show();
                 a.stopPropagation();
             });
             if (this.hasComponent()) {
-                this.component.on("click.iconpicker", function() {
+                this.component.on("click", function() {
                     c.toggle();
                 });
             }
             if (this.hasInput()) {
-                this.input.on("keyup.iconpicker", function(d) {
+                this.input.on("keyup", function(d) {
                     if (!b.inArray(d.keyCode, [ 38, 40, 37, 39, 16, 17, 18, 9, 8, 91, 93, 20, 46, 186, 190, 46, 78, 188, 44, 86 ])) {
                         c.update();
                     } else {
