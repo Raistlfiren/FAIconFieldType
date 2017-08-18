@@ -3,6 +3,7 @@
 namespace Raistlfiren\FAIconFieldType;
 
 use Raistlfiren\FAIconFieldType\Field\FAIconPickerField;
+use Raistlfiren\FAIconFieldType\Provider\FAIconFieldTypeProvider;
 use Bolt\Extension\SimpleExtension;
 use Bolt\Asset\File\JavaScript;
 use Bolt\Asset\File\Stylesheet;
@@ -10,6 +11,15 @@ use Bolt\Controller\Zone;
 
 class FAIconFieldTypeExtension extends SimpleExtension
 {
+
+    public function getServiceProviders()
+    {
+        return [
+            $this,
+            new FAIconFieldTypeProvider()
+        ];
+    }
+        
     protected function registerFields()
     {
         return [
