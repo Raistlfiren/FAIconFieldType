@@ -2,9 +2,10 @@
 
 namespace Raistlfiren\FAIconFieldType\Field;
 
-use Bolt\Storage\Field\FieldInterface;
+use Bolt\Storage\Field\Type\FieldTypeBase;
+use Doctrine\DBAL\Types\Type;
 
-class FAIconPickerField implements FieldInterface
+class FAIconPickerField extends FieldTypeBase
 {
 
     public function getName()
@@ -19,7 +20,7 @@ class FAIconPickerField implements FieldInterface
 
     public function getStorageType()
     {
-        return 'text';
+        return Type::getType('text');
     }
 
     public function getStorageOptions()
