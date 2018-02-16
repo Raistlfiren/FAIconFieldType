@@ -7,7 +7,6 @@ use Doctrine\DBAL\Types\Type;
 
 class FAIconPickerField extends FieldTypeBase
 {
-
     public function getName()
     {
         return 'faiconpicker';
@@ -25,6 +24,6 @@ class FAIconPickerField extends FieldTypeBase
 
     public function getStorageOptions()
     {
-        return ['default'=>''];
+        return ['default' => ''];
     }
 }
