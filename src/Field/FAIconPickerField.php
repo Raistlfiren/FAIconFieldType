@@ -25,6 +25,6 @@ class FAIconPickerField extends FieldTypeBase
 
     public function getStorageOptions()
     {
-        return ['default'=>''];
+        return ['default'=>null];
     }
 }
